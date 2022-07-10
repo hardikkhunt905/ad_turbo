@@ -17,7 +17,7 @@ To easily integrate ads into your flutter app.
 - native small Ad, native Ad, native video(Android Only)
 
 
-# Installation
+# Getting Started
 - Add this dependencies to your pubspec.yaml file:
 
 ```yaml
