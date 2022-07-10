@@ -3,7 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:ad_turbo/ad_turbo.dart';
 
 void main() {
+  adTurbo();
   runApp(const MyApp());
+}
+
+adTurbo() async{
+  await AdTurbo.init();
+  await AdTurbo.adTurboTestDevice(testDeviceIds: "BC754A812958EE7FF20599662417762B");
 }
 
 class MyApp extends StatefulWidget {
@@ -17,13 +23,9 @@ class _MyAppState extends State<MyApp> {
   @override
   void initState() {
     super.initState();
-    adTurbo();
   }
 
-  adTurbo() async{
-    await AdTurbo.init();
-    await AdTurbo.adTurboTestDevice(testDeviceIds: "BC754A812958EE7FF20599662417762B");
-  }
+
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(

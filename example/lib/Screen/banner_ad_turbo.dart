@@ -21,7 +21,6 @@ class _BannerAdScreenState extends State<BannerAdScreen> {
      loadBanner();
   }
 
-
   loadBanner() async{
     await _bannerAdTurbo.loadBannerAdTurbo(
         adUnitId: AdTurboAdHelper.bannerAdUnitId,
@@ -31,7 +30,6 @@ class _BannerAdScreenState extends State<BannerAdScreen> {
         isBannerAdReady = true;
         setState((){});
       },
-
       // Called when an TurboBannerAd request failed.
       onAdFailedToLoad: (ad, error) {
         // Dispose the TurboBannerAd here to free resources.
@@ -40,7 +38,6 @@ class _BannerAdScreenState extends State<BannerAdScreen> {
         print('TurboBannerAd failed to load: $error');
         loadBanner();
       },
-
       // Called when an TurboBannerAd opens an overlay that covers the screen.
       onAdOpened: (ad) => print('TurboBannerAd opened.'),
 

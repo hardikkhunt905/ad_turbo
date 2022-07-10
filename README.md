@@ -59,10 +59,10 @@ android {
 ```xml
 <manifest>
     <application>
-         <!-- Sample AdMob app ID: ca-app-pub-3940256099942544~3347511713 -->
-       <meta-data
-           android:name="com.google.android.gms.ads.APPLICATION_ID"
-           android:value="ca-app-pub-3940256099942544~3347511713"/>
+        <!-- Sample AdMob app ID: ca-app-pub-3940256099942544~3347511713 -->
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-3940256099942544~3347511713"/>
     </application>
 </manifest>
 ```
@@ -92,9 +92,9 @@ See [this guide](https://developers.google.com/admob/flutter/quick-start) for mo
 ### ad_turbo implementation
 
 
-### Initialize the plugin 
+### Initialize the plugin
 
-You need to ad this in your `main` Fucnction For implementation plugin ads into your app's main.dart file : 
+You need to ad this in your `main` Fucnction For implementation plugin ads into your app's main.dart file :
 
 ```dart
 import 'package:ad_turbo/ad_turbo.dart';
@@ -610,4 +610,3 @@ child: const Text("AppOpenAd")),
   }
   
 ```
-
