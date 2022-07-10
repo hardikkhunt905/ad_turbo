@@ -89,7 +89,7 @@ See [this guide](https://developers.google.com/admob/flutter/quick-start) for mo
 
 # Documentation
 
-## ad_turbo implementation
+### ad_turbo implementation
 
 
 ### Initialize the plugin 
