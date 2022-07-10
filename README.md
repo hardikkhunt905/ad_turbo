@@ -111,7 +111,7 @@ adTurbo() async{
 ```
 
 
-### AdHelper
+## AdHelper
 
 You can create adhelper for plateform spacific google mob id "
 
@@ -144,7 +144,7 @@ class AdTurboAdHelper {
 #### For more detail On How to spacify AdHelper Check Example of ad_turbo AdTurboAdHelper [here](https://github.com/hardikkhunt905/ad_turbo/blob/main/example/lib/Screen/AdTurboAdHelper.dart).
 
 
-### Banner Ad
+## Banner Ad
 
 ####- For implement banner Ad You need to initialize `BannerAdTurbo`
 
@@ -172,7 +172,7 @@ _bannerAdTurbo.getBannerAdTurbo();
 #### For more detail On How to Implement BannerAd Check Example of ad_turbo bannerAd [here](https://github.com/hardikkhunt905/ad_turbo/blob/main/example/lib/Screen/banner_ad_turbo.dart).
 
 
-### Interstitial Ad
+## Interstitial Ad
 
 ####- For implement interstitial Ad You need to initialize `InterstitialAdTurbo`
 
@@ -206,7 +206,7 @@ child: const Text("InterstitialAd")),
 #### For more detail On How to Implement Interstitial Ad Check Example of ad_turbo interstitialAd [here](https://github.com/hardikkhunt905/ad_turbo/blob/main/example/lib/Screen/interstitial_ad_turbo.dart).
 
 
-### Rewarded Ad
+## Rewarded Ad
 
 ####- For implement Rewarded Ad You need to initialize `RewardedAdTurbo`
 
@@ -243,7 +243,7 @@ child: const Text("RewardedAd")),
 (https://github.com/hardikkhunt905/ad_turbo/blob/main/example/lib/Screen/rewarded_ad_turbo.dart).
 
 
-### RewardedInterstitial Ad
+## RewardedInterstitial Ad
 
 ####- For implement RewardedInterstitial Ad You need to initialize `RewardedInterstitialAdTurbo`
 
@@ -280,7 +280,7 @@ child: const Text("RewardedInterstitialAd")),
 (https://github.com/hardikkhunt905/ad_turbo/blob/main/example/lib/Screen/rewarded_interstitial_ad_turbo.dart).
 
 
-### AppOpen Ad
+## AppOpen Ad
 
 ####- For implement AppOpen Ad You need to initialize `AppOpenAdTurbo`
 
@@ -317,7 +317,7 @@ child: const Text("AppOpenAd")),
 (https://github.com/hardikkhunt905/ad_turbo/blob/main/example/lib/Screen/appOpen_ad_turbo.dart).
 
 
-### Native AdS
+## Native AdS
 
 ####- For implement Native AdS You need to initialize `NativeAdTurbo`
 
@@ -327,7 +327,7 @@ child: const Text("AppOpenAd")),
 
 ```
 
-### NativeAd Small
+## NativeAd Small
 
 
 ####- For load NativeSmall Ad there is Function `loadNativeSmallAdTurbo` :
@@ -350,7 +350,7 @@ child: const Text("AppOpenAd")),
 (https://github.com/hardikkhunt905/ad_turbo/blob/main/example/lib/Screen/native_small_ad_turbo.dart).
 
 
-### NativeAd Medium
+## NativeAd Medium
 
 
 ####- For load NativeMedium Ad there is Function `loadNativeMediumAdTurbo` :
@@ -374,7 +374,7 @@ child: const Text("AppOpenAd")),
 (https://github.com/hardikkhunt905/ad_turbo/blob/main/example/lib/Screen/native_medium_ad_turbo.dart).
 
 
-### NativeAd Video
+## NativeAd Video
 
 
 ####- For load NativeVideo Ad there is Function `loadNativeVideoAdTurbo` :
@@ -611,14 +611,3 @@ child: const Text("AppOpenAd")),
   
 ```
 
-## Prerequisites
-
-*   Flutter 1.22.0 or higher
-*   Android
-    *   Android Studio 3.2 or higher
-    *   Target Android API level 19 or higher
-    *   Set `compileSdkVersion` to 28 or higher
-    *   Android Gradle Plugin 4.1 or higher (this is the version supported by Flutter out of the box)
-*   Ios
-    *   Latest version of Xcode with [enabled command-line tools](https://flutter.dev/docs/get-started/install/macos#install-xcode).
-*   Recommended: [Create an AdMob account](https://support.google.com/admob/answer/2784575) and [register an Android and/or iOS app](https://support.google.com/admob/answer/2773509) (To show live ads on a published app, it is required to register that app).            
