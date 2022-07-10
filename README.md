@@ -8,7 +8,7 @@ To easily integrate ads into your flutter app.
 
 # Features
 
-## Google Mobile Ads
+### Google Mobile Ads
 - banner Ad
 - interstitial Ad
 - rewarded Ad
