@@ -30,7 +30,7 @@ dependencies:
 
 ## Platform Specific Setup
 
-## Android
+### Android
 
 #### Set minSdkVersion 19 to \android\app\build.gradle:
 
