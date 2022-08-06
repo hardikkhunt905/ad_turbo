@@ -84,7 +84,7 @@ The AdMob App ID must be included in the AndroidManifest.xml. Failure to do so w
 ##### This is a test id you need to ad your admob id for real ads at <string>ca-app-pub-xxxxxxxxxxxxxxxx~yyyyyyyyyy</string>
 
 
-See [this guide](https://developers.google.com/admob/flutter/quick-start) for more information about configuring Integrating the Google Mobile Ads SDK into a Flutter app.
+See [this guide](https:///developers.google.com/admob/flutter/quick-start) for more information about configuring Integrating the Google Mobile Ads SDK into a Flutter app.
 
 
 # Documentation
@@ -141,7 +141,7 @@ class AdTurboAdHelper {
   }
  }
 ```
-#### For more detail On How to spacify AdHelper Check Example of ad_turbo AdTurboAdHelper [here](https://github.com/hardikkhunt905/ad_turbo/blob/main/example/lib/Screen/AdTurboAdHelper.dart).
+#### For more detail On How to spacify AdHelper Check Example of ad_turbo AdTurboAdHelper [here](https:///github.com/hardikkhunt905/ad_turbo/blob/main/example/lib/Screen/AdTurboAdHelper.dart).
 
 
 ## Banner Ad
@@ -169,7 +169,7 @@ _bannerAdTurbo.getBannerAdTurbo();
 
 ```
 
-#### For more detail On How to Implement BannerAd Check Example of ad_turbo bannerAd [here](https://github.com/hardikkhunt905/ad_turbo/blob/main/example/lib/Screen/banner_ad_turbo.dart).
+#### For more detail On How to Implement BannerAd Check Example of ad_turbo bannerAd [here](https:///github.com/hardikkhunt905/ad_turbo/blob/main/example/lib/Screen/banner_ad_turbo.dart).
 
 
 ## Interstitial Ad
@@ -203,7 +203,7 @@ ElevatedButton(onPressed: ()async{
 child: const Text("InterstitialAd")),
 ```
 
-#### For more detail On How to Implement Interstitial Ad Check Example of ad_turbo interstitialAd [here](https://github.com/hardikkhunt905/ad_turbo/blob/main/example/lib/Screen/interstitial_ad_turbo.dart).
+#### For more detail On How to Implement Interstitial Ad Check Example of ad_turbo interstitialAd [here](https:///github.com/hardikkhunt905/ad_turbo/blob/main/example/lib/Screen/interstitial_ad_turbo.dart).
 
 
 ## Rewarded Ad
@@ -240,7 +240,7 @@ child: const Text("RewardedAd")),
 ```
 
 #### For more detail On How to Implement Rewarded Ad Check Example of ad_turbo RewardedAd [here]
-(https://github.com/hardikkhunt905/ad_turbo/blob/main/example/lib/Screen/rewarded_ad_turbo.dart).
+(https:///github.com/hardikkhunt905/ad_turbo/blob/main/example/lib/Screen/rewarded_ad_turbo.dart).
 
 
 ## RewardedInterstitial Ad
@@ -277,7 +277,7 @@ child: const Text("RewardedInterstitialAd")),
 ```
 
 #### For more detail On How to Implement RewardedInterstitial Ad Check Example of ad_turbo RewardedInterstitial [here]
-(https://github.com/hardikkhunt905/ad_turbo/blob/main/example/lib/Screen/rewarded_interstitial_ad_turbo.dart).
+(https:///github.com/hardikkhunt905/ad_turbo/blob/main/example/lib/Screen/rewarded_interstitial_ad_turbo.dart).
 
 
 ## AppOpen Ad
@@ -314,7 +314,7 @@ child: const Text("AppOpenAd")),
 ```
 
 #### For more detail On How to Implement AppOpen Ad Check Example of ad_turbo AppOpen [here]
-(https://github.com/hardikkhunt905/ad_turbo/blob/main/example/lib/Screen/appOpen_ad_turbo.dart).
+(https:///github.com/hardikkhunt905/ad_turbo/blob/main/example/lib/Screen/appOpen_ad_turbo.dart).
 
 
 ## Native AdS
@@ -347,7 +347,7 @@ child: const Text("AppOpenAd")),
 ```
 
 #### For more detail On How to Implement NativeSmall Ad Check Example of ad_turbo NativeSmall [here]
-(https://github.com/hardikkhunt905/ad_turbo/blob/main/example/lib/Screen/native_small_ad_turbo.dart).
+(https:///github.com/hardikkhunt905/ad_turbo/blob/main/example/lib/Screen/native_small_ad_turbo.dart).
 
 
 ## NativeAd Medium
@@ -371,7 +371,7 @@ child: const Text("AppOpenAd")),
 ```
 
 #### For more detail On How to Implement NativeMedium Ad Check Example of ad_turbo NativeMedium [here]
-(https://github.com/hardikkhunt905/ad_turbo/blob/main/example/lib/Screen/native_medium_ad_turbo.dart).
+(https:///github.com/hardikkhunt905/ad_turbo/blob/main/example/lib/Screen/native_medium_ad_turbo.dart).
 
 
 ## NativeAd Video
@@ -395,7 +395,7 @@ child: const Text("AppOpenAd")),
 ```
 
 #### For more detail On How to Implement NativeVideo Ad Check Example of ad_turbo NativeVideo [here]
-(https://github.com/hardikkhunt905/ad_turbo/blob/main/example/lib/Screen/native_video_ad_turbo.dart).
+(https:///github.com/hardikkhunt905/ad_turbo/blob/main/example/lib/Screen/native_video_ad_turbo.dart).
 
 
 
@@ -410,27 +410,27 @@ child: const Text("AppOpenAd")),
   loadAd() async{
     await _bannerAdTurbo.loadBannerAdTurbo(
         adUnitId: AdTurboAdHelper.bannerAdUnitId,
-      // Called when an TurboBannerAd is successfully received.
+      /// Called when an TurboBannerAd is successfully received.
       onAdLoaded: (ad) {
       log("ad_turbo_plugin : TurboBannerAd loaded");
         isBannerAdReady = true;
         setState((){});
       },
-      // Called when an TurboBannerAd request failed.
+      /// Called when an TurboBannerAd request failed.
       onAdFailedToLoad: (ad, error) {
-        // Dispose the TurboBannerAd here to free resources.
+        /// Dispose the TurboBannerAd here to free resources.
         isBannerAdReady = false;
         ad.dispose();
         print('TurboBannerAd failed to load: $error');
         loadAd();
       },
-      // Called when an TurboBannerAd opens an overlay that covers the screen.
+      /// Called when an TurboBannerAd opens an overlay that covers the screen.
       onAdOpened: (ad) => print('TurboBannerAd opened.'),
 
-      // Called when an TurboBannerAd removes an overlay that covers the screen.
+      /// Called when an TurboBannerAd removes an overlay that covers the screen.
       onAdClosed: (ad) => print('TurboBannerAd closed.'),
 
-      // Called when an impression occurs on the TurboBannerAd.
+      /// Called when an impression occurs on the TurboBannerAd.
       onAdImpression: (ad) => print('TurboBannerAd impression.'),
         adSize: BannerAdTurbo.banner);
   }
@@ -446,7 +446,7 @@ child: const Text("AppOpenAd")),
     await _interstitialAdTurbo.loadInterstitialAdTurbo(adUnitId: AdTurboAdHelper.interstitialAdUnitId,
       onAdLoaded: (ad) {
         print('$ad loaded.');
-        // Keep a reference to the ad so you can show it later.
+        /// Keep a reference to the ad so you can show it later.
         _interstitialAdTurbo.interstitialAd = ad;
         isInterstitialAdReady = true;
       },
@@ -468,7 +468,7 @@ child: const Text("AppOpenAd")),
     await _rewardedAdTurbo.loadRewardedAdTurbo(adUnitId: AdTurboAdHelper.rewardedAdUnitId,
         onAdLoaded: (ad) {
           print('$ad loaded.');
-          // Keep a reference to the ad so you can show it later.
+          /// Keep a reference to the ad so you can show it later.
           _rewardedAdTurbo.rewardedAd = ad;
           isRewardedAdReady = true;
         },
@@ -490,7 +490,7 @@ child: const Text("AppOpenAd")),
     await _rewardedInterstitialAdTurbo.loadRewardedInterstitialAdTurbo(adUnitId: AdTurboAdHelper.rewardedInterstitial,
         onAdLoaded: (ad) {
           print('$ad loaded.');
-          // Keep a reference to the ad so you can show it later.
+          /// Keep a reference to the ad so you can show it later.
           _rewardedInterstitialAdTurbo.rewardedInterstitial = ad;
           isRewardedInterstitialAdReady = true;
         },
@@ -536,28 +536,28 @@ child: const Text("AppOpenAd")),
   loadAd() async{
     await _nativeAdTurbo.loadNativeSmallAdTurbo(
       adUnitId: AdTurboAdHelper.nativeAdvancedAdUnitId,
-        // Called when an ad is successfully received.
+        /// Called when an ad is successfully received.
         onAdLoaded: (ad) {
           print('Ad loaded.');
           isNativeSmallAdReady = true;
           setState(()=>"");
         },
-        // Called when an ad request failed.
+        /// Called when an ad request failed.
 
         onAdFailedToLoad:(ad, error) {
           isNativeSmallAdReady = false;
-          // Dispose the ad here to free resources.
+          /// Dispose the ad here to free resources.
           ad.dispose();
           print('Ad load failed (code=${error.code} message=${error.message})');
           loadAd();
         },
-        // Called when an ad opens an overlay that covers the screen.
+        /// Called when an ad opens an overlay that covers the screen.
         onAdOpened: (ad) => print('Ad opened.'),
-        // Called when an ad removes an overlay that covers the screen.
+        /// Called when an ad removes an overlay that covers the screen.
         onAdClosed: (ad) => print('Ad closed.'),
-        // Called when an impression occurs on the ad.
+        /// Called when an impression occurs on the ad.
         onAdImpression: (ad) => print('Ad impression.'),
-        // Called when a click is recorded for a NativeAd.
+        /// Called when a click is recorded for a NativeAd.
         onNativeAdClicked: (ad) => print('Ad clicked.'));
   }
   
@@ -572,28 +572,28 @@ child: const Text("AppOpenAd")),
   loadAd() async{
     await _nativeAdTurbo.loadNativeMediumAdTurbo(
         adUnitId: AdTurboAdHelper.nativeAdvancedAdUnitId,
-        // Called when an ad is successfully received.
+        /// Called when an ad is successfully received.
         onAdLoaded: (ad) {
           print('Ad loaded.');
           isNativeMediumAdReady = true;
           setState(()=>"");
         },
-        // Called when an ad request failed.
+        /// Called when an ad request failed.
 
         onAdFailedToLoad:(ad, error) {
           isNativeMediumAdReady = false;
-          // Dispose the ad here to free resources.
+          /// Dispose the ad here to free resources.
           ad.dispose();
           print('Ad load failed (code=${error.code} message=${error.message})');
           loadAd();
         },
-        // Called when an ad opens an overlay that covers the screen.
+        /// Called when an ad opens an overlay that covers the screen.
         onAdOpened: (ad) => print('Ad opened.'),
-        // Called when an ad removes an overlay that covers the screen.
+        /// Called when an ad removes an overlay that covers the screen.
         onAdClosed: (ad) => print('Ad closed.'),
-        // Called when an impression occurs on the ad.
+        /// Called when an impression occurs on the ad.
         onAdImpression: (ad) => print('Ad impression.'),
-        // Called when a click is recorded for a NativeAd.
+        /// Called when a click is recorded for a NativeAd.
         onNativeAdClicked: (ad) => print('Ad clicked.'));
   }
   

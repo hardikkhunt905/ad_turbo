@@ -16,7 +16,6 @@ class RewardedInterstitialAdTurbo {
     required GenericAdEventCallback<RewardedInterstitialAd> onAdLoaded,
     required FullScreenAdLoadErrorCallback onAdFailedToLoad,
   }) async {
-
     RewardedInterstitialAd.load(
         adUnitId: adUnitId,
         request: AdRequest(
@@ -29,19 +28,17 @@ class RewardedInterstitialAdTurbo {
             mediationExtrasIdentifier: mediationExtrasIdentifier,
             extras: extras),
         rewardedInterstitialAdLoadCallback: RewardedInterstitialAdLoadCallback(
-            onAdLoaded: onAdLoaded,
-            onAdFailedToLoad: onAdFailedToLoad
-        ));
+            onAdLoaded: onAdLoaded, onAdFailedToLoad: onAdFailedToLoad));
   }
 
   Future<void> rewardedInterstitialCallback(
       {GenericAdEventCallback<Ad>? onAdShowedFullScreenContent,
-        GenericAdEventCallback<Ad>? onAdDismissedFullScreenContent,
-        GenericAdEventCallback<Ad>? onAdWillDismissFullScreenContent,
-        GenericAdEventCallback<Ad>? onAdImpression,
-        GenericAdEventCallback<Ad>? onAdClicked,
-        Function(Ad ad, AdError error)?
-        onAdFailedToShowFullScreenContent}) async {
+      GenericAdEventCallback<Ad>? onAdDismissedFullScreenContent,
+      GenericAdEventCallback<Ad>? onAdWillDismissFullScreenContent,
+      GenericAdEventCallback<Ad>? onAdImpression,
+      GenericAdEventCallback<Ad>? onAdClicked,
+      Function(Ad ad, AdError error)?
+          onAdFailedToShowFullScreenContent}) async {
     rewardedInterstitial?.fullScreenContentCallback = FullScreenContentCallback(
         onAdClicked: onAdClicked,
         onAdShowedFullScreenContent: onAdShowedFullScreenContent,

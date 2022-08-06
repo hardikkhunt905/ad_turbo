@@ -6,3 +6,9 @@
 
 ## 0.0.3
 * Bug fixes and stability improvements.
+
+## 0.0.4
+* Bug fixes and stability improvements.
+
+## 0.0.5
+* Bug fixes and stability improvements.

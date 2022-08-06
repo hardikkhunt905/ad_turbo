@@ -59,18 +59,25 @@ class BannerAdTurbo {
         mediationExtrasIdentifier: mediationExtrasIdentifier,
         extras: extras,
       ),
-      size: adSize, /// bannerAd size as per need
+      size: adSize,
+
+      /// bannerAd size as per need
       listener: BannerAdListener(
         onAdClicked: onAdClicked,
         onPaidEvent: onPaidEvent,
+
         /// Called when an BannerAd is successfully received.
         onAdLoaded: onAdLoaded,
+
         /// Called when an BannerAd request failed.
         onAdFailedToLoad: onAdFailedToLoad,
+
         /// Called when an BannerAd opens an overlay that covers the screen.
         onAdOpened: onAdOpened,
+
         /// Called when an BannerAd removes an overlay that covers the screen.
         onAdClosed: onAdClosed,
+
         /// Called when an impression occurs on the BannerAd.
         onAdImpression: onAdImpression,
 

@@ -1,6 +1,6 @@
 name: ad_turbo
 description: ad_turbo Implements Google Ads, Easy and fastest way, supporting All Type of Google Ads,Native Ads(Android) included.
-version: 0.0.3
+version: 0.0.5
 homepage: https://github.com/hardikkhunt905/ad_turbo.git
 
 environment:
