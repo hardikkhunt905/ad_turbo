@@ -1,4 +1,4 @@
-import 'package:ad_turbo/Turbo_Ads/rewardedInterstitial_adTurbo.dart';
+import 'package:ad_turbo/Turbo_Ads/rewarded_interstitial_adturbo.dart';
 import 'package:ad_turbo_example/Screen/AdTurboAdHelper.dart';
 import 'package:ad_turbo_example/Screen/banner_ad_turbo.dart';
 import 'package:flutter/material.dart';

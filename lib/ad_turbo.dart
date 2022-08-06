@@ -6,7 +6,6 @@ export 'Turbo_Ads/banner_adTurbo.dart';
 export 'Turbo_Ads/interstitial_adTurbo.dart';
 export 'Turbo_Ads/native_adTurbo.dart';
 export 'Turbo_Ads/rewarded_adTurbo.dart';
-export 'Turbo_Ads/rewardedInterstitial_adTurbo.dart';
 
 
 class AdTurbo {
