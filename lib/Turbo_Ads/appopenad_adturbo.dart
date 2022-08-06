@@ -1,17 +1,17 @@
-
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 
-class AppOpenAdTurbo{
-
+class AppOpenAdTurbo {
   AppOpenAd? appOpenAd;
 
   /// Portrait orientation.
   static const int orientationPortrait = 1;
+
   /// Landscape orientation left.
   ///
   /// Android does not distinguish between left/right, and will treat this
   /// the same way as [orientationLandscapeRight].
   static const int orientationLandscapeLeft = 2;
+
   /// Landscape orientation right.
   ///
   /// Android does not distinguish between left/right, and will treat this
@@ -31,7 +31,7 @@ class AppOpenAdTurbo{
     Map<String, String>? extras,
     required GenericAdEventCallback<AppOpenAd> onAdLoaded,
     required FullScreenAdLoadErrorCallback onAdFailedToLoad,
-  }) async{
+  }) async {
     AppOpenAd.load(
       adUnitId: adUnitId,
       orientation: orientation,
@@ -51,16 +51,14 @@ class AppOpenAdTurbo{
     );
   }
 
-  appOpenCallback({
-    GenericAdEventCallback<Ad>? onAdShowedFullScreenContent,
-    GenericAdEventCallback<Ad>? onAdDismissedFullScreenContent,
-    GenericAdEventCallback<Ad>? onAdWillDismissFullScreenContent,
-    GenericAdEventCallback<Ad>? onAdImpression,
-    GenericAdEventCallback<Ad>? onAdClicked,
-    Function(Ad ad, AdError error)?
-    onAdFailedToShowFullScreenContent
-  }){
-    // Set the fullScreenContentCallback and show the ad.
+  appOpenCallback(
+      {GenericAdEventCallback<Ad>? onAdShowedFullScreenContent,
+      GenericAdEventCallback<Ad>? onAdDismissedFullScreenContent,
+      GenericAdEventCallback<Ad>? onAdWillDismissFullScreenContent,
+      GenericAdEventCallback<Ad>? onAdImpression,
+      GenericAdEventCallback<Ad>? onAdClicked,
+      Function(Ad ad, AdError error)? onAdFailedToShowFullScreenContent}) {
+    /// Set the fullScreenContentCallback and show the ad.
     appOpenAd?.fullScreenContentCallback = FullScreenContentCallback(
         onAdClicked: onAdClicked,
         onAdShowedFullScreenContent: onAdShowedFullScreenContent,
@@ -69,9 +67,6 @@ class AppOpenAdTurbo{
         onAdImpression: onAdImpression,
 
         /// For iOS only. Called before dismissing a full screen view.
-        onAdWillDismissFullScreenContent: onAdWillDismissFullScreenContent
-    );
+        onAdWillDismissFullScreenContent: onAdWillDismissFullScreenContent);
   }
-
-
 }

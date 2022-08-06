@@ -16,7 +16,6 @@ class RewardedAdTurbo {
     required GenericAdEventCallback<RewardedAd> onAdLoaded,
     required FullScreenAdLoadErrorCallback onAdFailedToLoad,
   }) async {
-
     RewardedAd.load(
       adUnitId: adUnitId,
       request: AdRequest(
@@ -37,12 +36,12 @@ class RewardedAdTurbo {
 
   Future<void> rewardedCallback(
       {GenericAdEventCallback<Ad>? onAdShowedFullScreenContent,
-        GenericAdEventCallback<Ad>? onAdDismissedFullScreenContent,
-        GenericAdEventCallback<Ad>? onAdWillDismissFullScreenContent,
-        GenericAdEventCallback<Ad>? onAdImpression,
-        GenericAdEventCallback<Ad>? onAdClicked,
-        Function(Ad ad, AdError error)?
-        onAdFailedToShowFullScreenContent}) async {
+      GenericAdEventCallback<Ad>? onAdDismissedFullScreenContent,
+      GenericAdEventCallback<Ad>? onAdWillDismissFullScreenContent,
+      GenericAdEventCallback<Ad>? onAdImpression,
+      GenericAdEventCallback<Ad>? onAdClicked,
+      Function(Ad ad, AdError error)?
+          onAdFailedToShowFullScreenContent}) async {
     rewardedAd.fullScreenContentCallback = FullScreenContentCallback(
         onAdClicked: onAdClicked,
         onAdShowedFullScreenContent: onAdShowedFullScreenContent,

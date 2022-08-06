@@ -2,7 +2,7 @@ import 'package:flutter/widgets.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 
 class BannerAdTurbo {
-  // The standard banner (320x50) size.
+  /// The standard banner (320x50) size.
   static const AdSize banner = AdSize(width: 320, height: 50);
 
   /// The large banner (320x100) size.
@@ -24,7 +24,7 @@ class BannerAdTurbo {
     return AdSize(width: width, height: height);
   }
 
-  //----------------------- BannerAdTurbo ----------------------//
+  ///----------------------- BannerAdTurbo ----------------------///
   late BannerAd bannerAd;
 
   Future<void> loadBannerAdTurbo({
@@ -59,19 +59,19 @@ class BannerAdTurbo {
         mediationExtrasIdentifier: mediationExtrasIdentifier,
         extras: extras,
       ),
-      size: adSize, // bannerAd size as per need
+      size: adSize, /// bannerAd size as per need
       listener: BannerAdListener(
         onAdClicked: onAdClicked,
         onPaidEvent: onPaidEvent,
-        // Called when an BannerAd is successfully received.
+        /// Called when an BannerAd is successfully received.
         onAdLoaded: onAdLoaded,
-        // Called when an BannerAd request failed.
+        /// Called when an BannerAd request failed.
         onAdFailedToLoad: onAdFailedToLoad,
-        // Called when an BannerAd opens an overlay that covers the screen.
+        /// Called when an BannerAd opens an overlay that covers the screen.
         onAdOpened: onAdOpened,
-        // Called when an BannerAd removes an overlay that covers the screen.
+        /// Called when an BannerAd removes an overlay that covers the screen.
         onAdClosed: onAdClosed,
-        // Called when an impression occurs on the BannerAd.
+        /// Called when an impression occurs on the BannerAd.
         onAdImpression: onAdImpression,
 
         /// For iOS only. Called before dismissing a full screen view.
