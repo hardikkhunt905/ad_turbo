@@ -38,16 +38,12 @@ public class AdTurboPlugin implements FlutterPlugin, MethodCallHandler {
   @Override
   public void onMethodCall(@NonNull MethodCall call, @NonNull Result result) {
 
-
     if (call.method.equals("AdTurboNativeAds")) {
       GoogleMobileAdsPlugin.registerNativeAdFactory(flutterEngine, "adTurboNativeSmall", new com.example.ad_turbo.AdTurboNativeSmall(context));
       GoogleMobileAdsPlugin.registerNativeAdFactory(flutterEngine, "adTurboNativeMedium", new com.example.ad_turbo.AdTurboNativeMedium(context));
-
-//      Map<String, String> arguments = call.arguments();
-//      assert arguments != null;
-//      String nativeId = arguments.get("nativeVideoID");
-//      pluginBinding.getPlatformViewRegistry().registerViewFactory("adTurboNativeVideo",
-//              new com.example.ad_turbo.AdTurboNativeVideoFactory(nativeId));
+      result.success(true);
+    }else{
+      result.success(false);
     }
 
     if (call.method.equals("AdTurboNativeVideoAds")) {
@@ -55,7 +51,10 @@ public class AdTurboPlugin implements FlutterPlugin, MethodCallHandler {
       assert arguments != null;
       String nativeId = arguments.get("nativeVideoID");
       pluginBinding.getPlatformViewRegistry().registerViewFactory("adTurboNativeVideo",
-              new com.example.ad_turbo.AdTurboNativeVideoFactory(nativeId));
+      new com.example.ad_turbo.AdTurboNativeVideoFactory(nativeId));
+      result.success(true);
+    }else{
+      result.success(false);
     }
 
   }

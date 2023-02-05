@@ -1,5 +1,6 @@
 import 'package:ad_turbo/Turbo_Ads/native_adTurbo.dart';
-import 'package:ad_turbo_example/Screen/AdTurboAdHelper.dart';
+import 'package:ad_turbo_example/Screen/ad_turbo_helper.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 class NativeSmallAdScreen extends StatefulWidget {
@@ -10,7 +11,6 @@ class NativeSmallAdScreen extends StatefulWidget {
 }
 
 class _NativeBannerAdScreenState extends State<NativeSmallAdScreen> {
-
   bool isNativeSmallAdReady = false;
   final _nativeAdTurbo = NativeAdTurbo();
 
@@ -20,45 +20,68 @@ class _NativeBannerAdScreenState extends State<NativeSmallAdScreen> {
     loadAd();
   }
 
-
-  loadAd() async{
+  loadAd() async {
     await _nativeAdTurbo.loadNativeSmallAdTurbo(
-      adUnitId: AdTurboAdHelper.nativeAdvancedAdUnitId,
+        adUnitId: AdTurboAdHelper.nativeAdvancedAdUnitId,
         // Called when an ad is successfully received.
         onAdLoaded: (ad) {
-          print('Ad loaded.');
+          if (kDebugMode) {
+            print('Ad loaded.');
+          }
           isNativeSmallAdReady = true;
-          setState(()=>"");
+          setState(() => "");
         },
         // Called when an ad request failed.
 
-        onAdFailedToLoad:(ad, error) {
+        onAdFailedToLoad: (ad, error) {
           isNativeSmallAdReady = false;
           // Dispose the ad here to free resources.
           ad.dispose();
-          print('Ad load failed (code=${error.code} message=${error.message})');
+          if (kDebugMode) {
+            print(
+                'Ad load failed (code=${error.code} message=${error.message})');
+          }
           loadAd();
         },
         // Called when an ad opens an overlay that covers the screen.
-        onAdOpened: (ad) => print('Ad opened.'),
+        onAdOpened: (ad) {
+          if (kDebugMode) {
+            print('Ad opened.');
+          }
+        },
         // Called when an ad removes an overlay that covers the screen.
-        onAdClosed: (ad) => print('Ad closed.'),
+        onAdClosed: (ad) {
+          if (kDebugMode) {
+            print('Ad closed.');
+          }
+        },
         // Called when an impression occurs on the ad.
-        onAdImpression: (ad) => print('Ad impression.'),
+        onAdImpression: (ad) {
+          if (kDebugMode) {
+            print('Ad impression.');
+          }
+        },
         // Called when a click is recorded for a NativeAd.
-        onNativeAdClicked: (ad) => print('Ad clicked.'));
+        onNativeAdClicked: (ad) {
+          if (kDebugMode) {
+            print('Ad clicked.');
+          }
+        });
   }
 
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        appBar: AppBar(title: Text("NativeSmallAd")),
-        body: Column(mainAxisAlignment: MainAxisAlignment.end,
+        appBar: AppBar(title: const Text("NativeSmallAd")),
+        body: Column(
+          mainAxisAlignment: MainAxisAlignment.end,
           children: [
-
-            Container(height: 102,child: isNativeSmallAdReady?_nativeAdTurbo.getNativeSmallAdTurbo() :SizedBox.shrink())
-
+            SizedBox(
+                height: 102,
+                child: isNativeSmallAdReady
+                    ? _nativeAdTurbo.getNativeSmallAdTurbo()
+                    : const SizedBox.shrink())
           ],
         ),
       ),

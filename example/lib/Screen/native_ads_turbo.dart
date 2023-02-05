@@ -10,7 +10,7 @@ class NativeAdsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        appBar: AppBar(title: Text("NativeAds")),
+        appBar: AppBar(title: const Text("NativeAds")),
         body: Center(
           child: Column(
             children: [
@@ -29,7 +29,7 @@ class NativeAdsScreen extends StatelessWidget {
 
               const SizedBox(height: 20),
               ElevatedButton(onPressed: () {
-                Navigator.of(context).push(MaterialPageRoute(builder: (context) => NativeVideoAdScreen()));
+                Navigator.of(context).push(MaterialPageRoute(builder: (context) => const NativeVideoAdScreen()));
               }, child: const Text("NativeVideoAdScreen")),
 
             ],

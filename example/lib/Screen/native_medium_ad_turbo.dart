@@ -1,5 +1,6 @@
 import 'package:ad_turbo/Turbo_Ads/native_adTurbo.dart';
-import 'package:ad_turbo_example/Screen/AdTurboAdHelper.dart';
+import 'package:ad_turbo_example/Screen/ad_turbo_helper.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 class NativeMediumAdScreen extends StatefulWidget {
@@ -10,7 +11,6 @@ class NativeMediumAdScreen extends StatefulWidget {
 }
 
 class _NativeMediumAdScreenState extends State<NativeMediumAdScreen> {
-
   bool isNativeMediumAdReady = false;
   final _nativeAdTurbo = NativeAdTurbo();
 
@@ -20,34 +20,53 @@ class _NativeMediumAdScreenState extends State<NativeMediumAdScreen> {
     loadAd();
   }
 
-
-
-  loadAd() async{
+  loadAd() async {
     await _nativeAdTurbo.loadNativeMediumAdTurbo(
         adUnitId: AdTurboAdHelper.nativeAdvancedAdUnitId,
         // Called when an ad is successfully received.
         onAdLoaded: (ad) {
-          print('Ad loaded.');
+          if (kDebugMode) {
+            print('Ad loaded.');
+          }
           isNativeMediumAdReady = true;
-          setState(()=>"");
+          setState(() => "");
         },
         // Called when an ad request failed.
 
-        onAdFailedToLoad:(ad, error) {
+        onAdFailedToLoad: (ad, error) {
           isNativeMediumAdReady = false;
           // Dispose the ad here to free resources.
           ad.dispose();
-          print('Ad load failed (code=${error.code} message=${error.message})');
+          if (kDebugMode) {
+            print(
+                'Ad load failed (code=${error.code} message=${error.message})');
+          }
           loadAd();
         },
         // Called when an ad opens an overlay that covers the screen.
-        onAdOpened: (ad) => print('Ad opened.'),
+        onAdOpened: (ad) {
+          if (kDebugMode) {
+            print('Ad opened.');
+          }
+        },
         // Called when an ad removes an overlay that covers the screen.
-        onAdClosed: (ad) => print('Ad closed.'),
+        onAdClosed: (ad) {
+          if (kDebugMode) {
+            print('Ad closed.');
+          }
+        },
         // Called when an impression occurs on the ad.
-        onAdImpression: (ad) => print('Ad impression.'),
+        onAdImpression: (ad) {
+          if (kDebugMode) {
+            print('Ad impression.');
+          }
+        },
         // Called when a click is recorded for a NativeAd.
-        onNativeAdClicked: (ad) => print('Ad clicked.'));
+        onNativeAdClicked: (ad) {
+          if (kDebugMode) {
+            print('Ad clicked.');
+          }
+        });
   }
 
   @override
@@ -55,11 +74,14 @@ class _NativeMediumAdScreenState extends State<NativeMediumAdScreen> {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(title: const Text("NativeMediumAd")),
-        body: Column(mainAxisAlignment: MainAxisAlignment.end,
+        body: Column(
+          mainAxisAlignment: MainAxisAlignment.end,
           children: [
-
-            Container(height: 255,child: isNativeMediumAdReady?_nativeAdTurbo.getNativeMediumAdTurbo() :SizedBox.shrink())
-
+            SizedBox(
+                height: 255,
+                child: isNativeMediumAdReady
+                    ? _nativeAdTurbo.getNativeMediumAdTurbo()
+                    : const SizedBox.shrink())
           ],
         ),
       ),

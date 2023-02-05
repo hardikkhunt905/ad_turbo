@@ -8,7 +8,7 @@ void main() {
 }
 
 adTurbo() async{
-  await AdTurbo.init();
+  AdTurbo.init();
   await AdTurbo.adTurboTestDevice(testDeviceIds: "BC754A812958EE7FF20599662417762B");
 }
 

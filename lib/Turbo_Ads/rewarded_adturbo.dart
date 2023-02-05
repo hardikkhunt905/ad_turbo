@@ -10,7 +10,6 @@ class RewardedAdTurbo {
     List<String>? neighboringContentUrls,
     bool? nonPersonalizedAds,
     int? httpTimeoutMillis,
-    LocationParams? location,
     String? mediationExtrasIdentifier,
     Map<String, String>? extras,
     required GenericAdEventCallback<RewardedAd> onAdLoaded,
@@ -24,7 +23,6 @@ class RewardedAdTurbo {
           neighboringContentUrls: neighboringContentUrls,
           nonPersonalizedAds: nonPersonalizedAds,
           httpTimeoutMillis: httpTimeoutMillis,
-          location: location,
           mediationExtrasIdentifier: mediationExtrasIdentifier,
           extras: extras),
       rewardedAdLoadCallback: RewardedAdLoadCallback(

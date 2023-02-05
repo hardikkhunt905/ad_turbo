@@ -1,4 +1,4 @@
-import 'package:ad_turbo_example/Screen/appOpen_ad_turbo.dart';
+import 'package:ad_turbo_example/Screen/app_open_ad_turbo.dart';
 import 'package:ad_turbo_example/Screen/banner_ad_turbo.dart';
 import 'package:ad_turbo_example/Screen/interstitial_ad_turbo.dart';
 import 'package:ad_turbo_example/Screen/native_ads_turbo.dart';
@@ -18,55 +18,67 @@ class HomePage extends StatelessWidget {
             child: Center(
               child: Column(
                 children: [
-
                   //----------------------- BannerAdTurbo ----------------------//
 
                   const SizedBox(height: 20),
-                  ElevatedButton(onPressed: () {
-                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => const BannerAdScreen()));
-
-                  }, child: const Text("BannerAd")),
-
-
+                  ElevatedButton(
+                      onPressed: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => const BannerAdScreen()));
+                      },
+                      child: const Text("BannerAd")),
 
                   //----------------------- InterstitialAdTurbo ----------------------//
 
                   const SizedBox(height: 20),
-                  ElevatedButton(onPressed: () {
-                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => const InterstitialAdScreen()));
-                  }, child: const Text("InterstitialAd")),
-
+                  ElevatedButton(
+                      onPressed: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) =>
+                                const InterstitialAdScreen()));
+                      },
+                      child: const Text("InterstitialAd")),
 
                   //----------------------- RewardedAd ----------------------//
 
                   const SizedBox(height: 20),
-                  ElevatedButton(onPressed: () {
-                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => const RewardedAdScreen()));
-                  }, child: const Text("RewardedAd")),
-
+                  ElevatedButton(
+                      onPressed: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => const RewardedAdScreen()));
+                      },
+                      child: const Text("RewardedAd")),
 
                   //----------------------- RewardedInterstitialAd ----------------------//
 
                   const SizedBox(height: 20),
-                  ElevatedButton(onPressed: () {
-                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => const RewardedInterstitialAdScreen()));
-                  }, child: const Text("Rewarded InterstitialAd")),
+                  ElevatedButton(
+                      onPressed: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) =>
+                                const RewardedInterstitialAdScreen()));
+                      },
+                      child: const Text("Rewarded InterstitialAd")),
 
                   //----------------------- AppOpenAd ----------------------//
 
                   const SizedBox(height: 20),
-                  ElevatedButton(onPressed: () {
-                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => const AppOpenAdScreen()));
-                  }, child: const Text("AppOpenAd")),
-
+                  ElevatedButton(
+                      onPressed: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => const AppOpenAdScreen()));
+                      },
+                      child: const Text("AppOpenAd")),
 
                   //----------------------- NativeAds ----------------------//
 
                   const SizedBox(height: 20),
-                  ElevatedButton(onPressed: () {
-                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => const NativeAdsScreen()));
-                  }, child: const Text("NativeAds")),
-
+                  ElevatedButton(
+                      onPressed: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => const NativeAdsScreen()));
+                      },
+                      child: const Text("NativeAds")),
                 ],
               ),
             ),

@@ -12,3 +12,6 @@
 
 ## 0.0.5
 * Bug fixes and stability improvements.
+
+## 0.0.6
+* updated with latest Google Ad Plugin.

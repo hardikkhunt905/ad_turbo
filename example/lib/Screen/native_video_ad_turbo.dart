@@ -1,10 +1,9 @@
 import 'package:ad_turbo/Turbo_Ads/native_adTurbo.dart';
-import 'package:ad_turbo_example/Screen/AdTurboAdHelper.dart';
+import 'package:ad_turbo_example/Screen/ad_turbo_helper.dart';
 import 'package:flutter/material.dart';
 
-
 class NativeVideoAdScreen extends StatefulWidget {
-   NativeVideoAdScreen({Key? key}) : super(key: key);
+  const NativeVideoAdScreen({Key? key}) : super(key: key);
 
   @override
   State<NativeVideoAdScreen> createState() => _NativeVideoAdScreenState();
@@ -16,13 +15,14 @@ class _NativeVideoAdScreenState extends State<NativeVideoAdScreen> {
   final _nativeAdTurbo = NativeAdTurbo();
 
   @override
-  void initState(){
+  void initState() {
     super.initState();
     loadAd();
   }
 
-  loadAd() async{
-    await _nativeAdTurbo.loadNativeVideoAdTurbo(nativeVideoID: AdTurboAdHelper.nativeAdvancedVideoAdUnitId);
+  loadAd() async {
+    await _nativeAdTurbo.loadNativeVideoAdTurbo(
+        nativeVideoID: AdTurboAdHelper.nativeAdvancedVideoAdUnitId);
   }
 
   @override
@@ -32,9 +32,9 @@ class _NativeVideoAdScreenState extends State<NativeVideoAdScreen> {
         appBar: AppBar(title: const Text("NativeVideoAd")),
         body: Column(
           children: [
-
-            Container(height: 310,child:  _nativeAdTurbo.getNativeVideoAdTurbo(context: context))
-
+            SizedBox(
+                height: 310,
+                child: _nativeAdTurbo.getNativeVideoAdTurbo(context: context))
           ],
         ),
       ),

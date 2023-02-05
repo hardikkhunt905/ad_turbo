@@ -26,7 +26,6 @@ class AppOpenAdTurbo {
     List<String>? neighboringContentUrls,
     bool? nonPersonalizedAds,
     int? httpTimeoutMillis,
-    LocationParams? location,
     String? mediationExtrasIdentifier,
     Map<String, String>? extras,
     required GenericAdEventCallback<AppOpenAd> onAdLoaded,
@@ -41,7 +40,6 @@ class AppOpenAdTurbo {
           neighboringContentUrls: neighboringContentUrls,
           nonPersonalizedAds: nonPersonalizedAds,
           httpTimeoutMillis: httpTimeoutMillis,
-          location: location,
           mediationExtrasIdentifier: mediationExtrasIdentifier,
           extras: extras),
       adLoadCallback: AppOpenAdLoadCallback(

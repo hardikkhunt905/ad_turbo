@@ -1,6 +1,6 @@
 name: ad_turbo
 description: ad_turbo Implements Google Ads, Easy and fastest way, supporting All Type of Google Ads,Native Ads(Android) included.
-version: 0.0.5
+version: 0.0.6
 homepage: https://github.com/hardikkhunt905/ad_turbo.git
 
 environment:
@@ -10,14 +10,13 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  plugin_platform_interface: ^2.0.2
-  google_mobile_ads: ^1.3.0
-  update: ^0.3.1
+  plugin_platform_interface: ^2.1.3
+  google_mobile_ads: ^2.3.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^2.0.0
+  flutter_lints: ^2.0.1
 
 flutter:
   plugin:

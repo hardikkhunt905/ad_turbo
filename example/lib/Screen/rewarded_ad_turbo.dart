@@ -1,5 +1,6 @@
 import 'package:ad_turbo/Turbo_Ads/rewarded_adTurbo.dart';
-import 'package:ad_turbo_example/Screen/AdTurboAdHelper.dart';
+import 'package:ad_turbo_example/Screen/ad_turbo_helper.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 class RewardedAdScreen extends StatefulWidget {
@@ -10,27 +11,31 @@ class RewardedAdScreen extends StatefulWidget {
 }
 
 class _RewardedAdScreenState extends State<RewardedAdScreen> {
-
   final _rewardedAdTurbo = RewardedAdTurbo();
   bool isRewardedAdReady = false;
 
   @override
-  void initState(){
+  void initState() {
     super.initState();
     loadAd();
   }
 
-  loadAd() async{
-    await _rewardedAdTurbo.loadRewardedAdTurbo(adUnitId: AdTurboAdHelper.rewardedAdUnitId,
+  loadAd() async {
+    await _rewardedAdTurbo.loadRewardedAdTurbo(
+        adUnitId: AdTurboAdHelper.rewardedAdUnitId,
         onAdLoaded: (ad) {
-          print('$ad loaded.');
+          if (kDebugMode) {
+            print('$ad loaded.');
+          }
           // Keep a reference to the ad so you can show it later.
           _rewardedAdTurbo.rewardedAd = ad;
           isRewardedAdReady = true;
         },
         onAdFailedToLoad: (error) {
           isRewardedAdReady = false;
-          print('RewardedAd failed to load: $error');
+          if (kDebugMode) {
+            print('RewardedAd failed to load: $error');
+          }
           loadAd();
         });
   }
@@ -43,44 +48,55 @@ class _RewardedAdScreenState extends State<RewardedAdScreen> {
         body: Center(
           child: Column(
             children: [
-
-
-
               // TurboRewardedAd
-              ElevatedButton(onPressed: ()async{
-                if(isRewardedAdReady){
-                  await _rewardedAdTurbo.rewardedAd.show(onUserEarnedReward: (ad, reward) {
-                    //You can do your work here!!
+              ElevatedButton(
+                  onPressed: () async {
+                    if (isRewardedAdReady) {
+                      await _rewardedAdTurbo.rewardedAd.show(
+                        onUserEarnedReward: (ad, reward) {
+                          //You can do your work here!!
 
-                      final snackBar = SnackBar(
-                        content: Text("Yay!! you have been rewarded with ${reward.amount.toString()} points"),
+                          final snackBar = SnackBar(
+                            content: Text(
+                                "Yay!! you have been rewarded with ${reward.amount.toString()} points"),
+                          );
+                          ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                        },
                       );
-                      ScaffoldMessenger.of(context).showSnackBar(snackBar);
-                  },);
 
-                  await _rewardedAdTurbo.rewardedCallback(
-                    onAdShowedFullScreenContent: (ad) =>
-                        print('%ad onAdShowedFullScreenContent.'),
-                    onAdDismissedFullScreenContent: (ad) {
-                      print('$ad onAdDismissedFullScreenContent.');
-                      ad.dispose();
-                      loadAd();
-                      //You can do your work here!!
-
-                    },
-                    onAdFailedToShowFullScreenContent: (ad,error) {
-                      print('$ad onAdFailedToShowFullScreenContent: $error');
-                      ad.dispose();
-                      loadAd();
-                    },
-                    onAdImpression: (ad) => print('$ad impression occurred.'),
-                  );
-                } else {
-                  return ;
-                }
-              }, child: const Text("RewardedAd")),
-
-
+                      await _rewardedAdTurbo.rewardedCallback(
+                        onAdShowedFullScreenContent: (ad) {
+                          if (kDebugMode) {
+                            print('%ad onAdShowedFullScreenContent.');
+                          }
+                        },
+                        onAdDismissedFullScreenContent: (ad) {
+                          if (kDebugMode) {
+                            print('$ad onAdDismissedFullScreenContent.');
+                          }
+                          ad.dispose();
+                          loadAd();
+                          //You can do your work here!!
+                        },
+                        onAdFailedToShowFullScreenContent: (ad, error) {
+                          if (kDebugMode) {
+                            print(
+                                '$ad onAdFailedToShowFullScreenContent: $error');
+                          }
+                          ad.dispose();
+                          loadAd();
+                        },
+                        onAdImpression: (ad) {
+                          if (kDebugMode) {
+                            print('$ad impression occurred.');
+                          }
+                        },
+                      );
+                    } else {
+                      return;
+                    }
+                  },
+                  child: const Text("RewardedAd")),
             ],
           ),
         ),
